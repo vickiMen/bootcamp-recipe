@@ -9,16 +9,13 @@ class Renderer {
     render(data){
         
         this.dest.empty()
-        // $('#recipes-container').empty()
-        // source
-        // $('#recipe-temp').html()
         const template = Handlebars.compile(this.source.html())
         const newHTML = template({data})
         this.dest.append(newHTML)
-        // $('#recipes-container').append(newHTML)
     }
 
     renderNoRslts(ingdnt){
+        this.dest.empty()
         this.dest.append(`<div class='no-results'>Sorry, no results were found for ${ingdnt}</div>`)
     }
 
