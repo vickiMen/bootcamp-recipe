@@ -18,14 +18,27 @@
         </div>
 
         <div id='recipes-container'>
-            bla
-        </div>
 
-    </div>
+        </div>
         
     
-    <script class='nba-temp' type="text/x-handlebars-template">
-    
+    <script id='recipe-temp' type="text/x-handlebars-template">
+        {{#each data}}
+            <div class='recipe-box' data-id={{@index}}>
+                <div class='title'>
+                    <a href='{{this.href}}'>{{this.title}}</a>
+                </div>
+                <div class='thumbnail'>
+                    <img src='{{this.thumbnail}}'>
+                </div>
+                <div class='ingdnts'>
+                    {{#each this.ingredients}}
+                        <li>{{.}}</li>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
     </script>
 
     <script class='stats-temp' type="text/x-handlebars-template">
@@ -37,7 +50,7 @@
     
     <script src="./handlebars/dist/handlebars.js"></script>
     <script src="./jquery/dist/jquery.js"></script>
-    <script src="renderer.js"></script>
+    <script src="Renderer.js"></script>
     <script src="main.js"></script>
 </body>
 

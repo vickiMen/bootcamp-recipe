@@ -27,4 +27,47 @@
 
 #recipes-container {
     grid-area: rc;
+    display: grid;
+    grid-gap: 2vmax;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.recipe-box {
+    width: 30vw;
+    height: 30vh;
+    padding: 1vmax;
+    background-color: pink;
+    display: grid;
+    grid-template-areas: 
+    'title'
+    'img'
+    'ingdnts';
+    grid-gap: 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 6px -1px rgba(0, 0, 0, 0.5), 0 4px 4px -1px rgba(0, 0, 0, 0.06);
+    justify-content: center;
+    align-content: center;
+}
+
+.title {
+    grid-area: title;
+}
+
+.thumbnail img {
+    width: 15vh;
+    height: 15vh;
+    grid-area: img;
+}
+
+.ingdnts {
+    grid-area: ingdnts;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    overflow-y: scroll;
+    /* border: 1px solid grey; */
+    /* background-color: ; */
+    border-radius: 5px;
+    /* box-shadow: 0 5px 6px -1px rgba(0, 0, 0, 0.5), 0 4px 4px -1px rgba(0, 0, 0, 0.06); */
+    /* padding: 2vmax; */
 }
