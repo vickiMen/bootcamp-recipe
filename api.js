@@ -20,7 +20,7 @@ router.get('/recipes/:ingredient', function(req,res){
             thumbnail: r.thumbnail, 
             href: r.href
         }))
-        res.send(modifiedResults)
+        results.length == 0 ? res.send(`No Resutls for ${ingredient}`) : res.send(modifiedResults)
     })
 })
 

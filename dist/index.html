@@ -23,21 +23,21 @@
         
     
     <script id='recipe-temp' type="text/x-handlebars-template">
-        {{#each data}}
-            <div class='recipe-box' data-id={{@index}}>
-                <div class='title'>
-                    <a href='{{this.href}}'>{{this.title}}</a>
+            {{#each data}}
+                <div class='recipe-box' data-id={{@index}}>
+                    <div class='title'>
+                        <a href='{{this.href}}'>{{this.title}}</a>
+                    </div>
+                    <div class='thumbnail'>
+                        <img src='{{this.thumbnail}}'>
+                    </div>
+                    <div class='ingdnts'>
+                        {{#each this.ingredients}}
+                            <li>{{.}}</li>
+                        {{/each}}
+                    </div>
                 </div>
-                <div class='thumbnail'>
-                    <img src='{{this.thumbnail}}'>
-                </div>
-                <div class='ingdnts'>
-                    {{#each this.ingredients}}
-                        <li>{{.}}</li>
-                    {{/each}}
-                </div>
-            </div>
-            {{/each}}
+                {{/each}}
         </div>
     </script>
 

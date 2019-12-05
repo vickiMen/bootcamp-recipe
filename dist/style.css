@@ -52,6 +52,7 @@
 
 .title {
     grid-area: title;
+    cursor: pointer;
 }
 
 .thumbnail img {
@@ -70,4 +71,5 @@
     border-radius: 5px;
     /* box-shadow: 0 5px 6px -1px rgba(0, 0, 0, 0.5), 0 4px 4px -1px rgba(0, 0, 0, 0.06); */
     /* padding: 2vmax; */
+    /* cursor: ; */
 }

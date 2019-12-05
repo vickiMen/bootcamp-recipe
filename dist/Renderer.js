@@ -7,6 +7,7 @@ class Renderer {
     }
 
     render(data){
+        
         this.dest.empty()
         // $('#recipes-container').empty()
         // source
@@ -17,9 +18,13 @@ class Renderer {
         // $('#recipes-container').append(newHTML)
     }
 
+    renderNoRslts(ingdnt){
+        this.dest.append(`<div class='no-results'>Sorry, no results were found for ${ingdnt}</div>`)
+    }
+
 }
 
 const rcpeDest = $('#recipes-container')
-const rcpeource = $('#recipe-temp')
+const rcpSource = $('#recipe-temp')
 
-const recipeRender = new Renderer(rcpeDest,rcpeource)
+const recipeRender = new Renderer(rcpeDest,rcpSource)
