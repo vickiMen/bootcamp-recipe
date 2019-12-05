@@ -13,8 +13,14 @@ router.get('/sanity', function(req,res){
 router.get('/recipes/:ingredient', function(req,res){
     let ingredient = req.params.ingredient
     request(`https://recipes-goodness.herokuapp.com/recipes/${ingredient}`, function(err,response){
-        // console.log(response)
-        res.send(JSON.parse(response.body).results)
+        let results = JSON.parse(response.body).results
+        let modifiedResults = results.map( r => new Object({
+            title: r.title, 
+            ingredients: r.ingredients, 
+            thumbnail: r.thumbnail, 
+            href: r.href
+        }))
+        res.send(modifiedResults)
     })
 })
 
